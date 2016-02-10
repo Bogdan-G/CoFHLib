@@ -1,12 +1,11 @@
 package cofh.lib.gui.container;
 
-import cofh.api.item.IInventoryContainerItem;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import cofh.api.item.IInventoryContainerItem;
 
 public class InventoryContainerItemWrapper implements IInventory {
 
@@ -15,12 +14,6 @@ public class InventoryContainerItemWrapper implements IInventory {
 	protected NBTTagCompound tag;
 	protected ItemStack[] inventory;
 	protected boolean dirty = false;
-
-	@Deprecated
-	public InventoryContainerItemWrapper(ContainerInventoryItem gui, ItemStack stack) {
-
-		this(stack);
-	}
 
 	public InventoryContainerItemWrapper(ItemStack itemstack) {
 

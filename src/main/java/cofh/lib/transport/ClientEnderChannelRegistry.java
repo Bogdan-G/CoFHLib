@@ -1,14 +1,13 @@
 package cofh.lib.transport;
 
-import cofh.lib.network.ByteBufHelper;
-
 import gnu.trove.map.hash.TIntObjectHashMap;
-
 import io.netty.buffer.ByteBuf;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import cofh.lib.network.ByteBufHelper;
 
 public class ClientEnderChannelRegistry implements IEnderChannelRegistry {
 

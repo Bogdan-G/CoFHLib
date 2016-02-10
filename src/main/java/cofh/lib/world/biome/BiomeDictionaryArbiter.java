@@ -1,13 +1,11 @@
 package cofh.lib.world.biome;
 
-import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.LoaderState;
-
 import java.util.HashMap;
 
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
+import net.minecraftforge.fml.common.LoaderState;
 
 public class BiomeDictionaryArbiter {
 

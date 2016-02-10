@@ -1,11 +1,13 @@
 package cofh.lib.gui.element;
 
-import static cofh.lib.gui.element.ElementButtonBase.*;
+import static cofh.lib.gui.element.ElementButtonBase.DISABLED;
+import static cofh.lib.gui.element.ElementButtonBase.ENABLED;
+import static cofh.lib.gui.element.ElementButtonBase.HOVER;
+
+import org.lwjgl.opengl.GL11;
 
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiColor;
-
-import org.lwjgl.opengl.GL11;
 
 public abstract class ElementSlider extends ElementBase {
 

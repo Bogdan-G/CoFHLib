@@ -1,8 +1,5 @@
 package cofh.lib.util;
 
-import com.google.common.base.Objects;
-import com.google.common.primitives.Ints;
-
 import java.util.AbstractCollection;
 import java.util.Arrays;
 import java.util.Collection;
@@ -11,6 +8,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
+
+import com.google.common.base.Objects;
+import com.google.common.primitives.Ints;
 
 @SuppressWarnings("unchecked")
 public class ArrayHashList<E extends Object> extends AbstractCollection<E> implements List<E>, Cloneable, java.io.Serializable {

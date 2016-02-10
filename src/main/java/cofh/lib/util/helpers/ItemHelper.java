@@ -2,14 +2,6 @@ package cofh.lib.util.helpers;
 
 import static net.minecraftforge.oredict.OreDictionary.WILDCARD_VALUE;
 
-import cofh.api.item.IEmpowerableItem;
-import cofh.api.item.IInventoryContainerItem;
-import cofh.api.item.IMultiModeItem;
-import cofh.lib.util.OreDictionaryProxy;
-import com.google.common.base.Strings;
-import cpw.mods.fml.common.event.FMLInterModComms;
-import cpw.mods.fml.common.registry.GameRegistry;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -29,9 +21,17 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fml.common.event.FMLInterModComms;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import cofh.api.item.IEmpowerableItem;
+import cofh.api.item.IInventoryContainerItem;
+import cofh.api.item.IMultiModeItem;
+import cofh.lib.util.OreDictionaryProxy;
+
+import com.google.common.base.Strings;
 
 /**
  * Contains various helper functions to assist with {@link Item} and {@link ItemStack} manipulation and interaction.

@@ -1,12 +1,11 @@
 package cofh.lib.util.helpers;
 
-import cofh.api.tileentity.IRedstoneControl;
-import cofh.api.tileentity.IRedstoneControl.ControlMode;
-
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import cofh.api.tileentity.IRedstoneControl;
+import cofh.api.tileentity.IRedstoneControl.ControlMode;
 
 public class RedstoneControlHelper {
 

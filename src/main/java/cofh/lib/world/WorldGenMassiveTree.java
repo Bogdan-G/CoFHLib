@@ -1,9 +1,7 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.*;
-
-import cofh.lib.util.WeightedRandomBlock;
-
+import static cofh.lib.world.WorldGenMinableCluster.canGenerateInBlock;
+import static cofh.lib.world.WorldGenMinableCluster.selectBlock;
 import gnu.trove.iterator.TLongObjectIterator;
 import gnu.trove.map.hash.TLongObjectHashMap;
 
@@ -15,7 +13,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.network.play.server.S21PacketChunkData;
 import net.minecraft.server.management.PlayerManager;
-import net.minecraft.server.management.PlayerManager.PlayerInstance;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -23,6 +20,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.NibbleArray;
 import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenMassiveTree extends WorldGenerator {
 

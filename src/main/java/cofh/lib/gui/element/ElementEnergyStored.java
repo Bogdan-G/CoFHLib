@@ -1,14 +1,13 @@
 package cofh.lib.gui.element;
 
+import java.util.List;
+
+import net.minecraft.util.ResourceLocation;
 import cofh.api.energy.IEnergyStorage;
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiProps;
 import cofh.lib.render.RenderHelper;
 import cofh.lib.util.helpers.MathHelper;
-
-import java.util.List;
-
-import net.minecraft.util.ResourceLocation;
 
 public class ElementEnergyStored extends ElementBase {
 

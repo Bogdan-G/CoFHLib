@@ -1,11 +1,9 @@
 package cofh.lib.gui.element;
 
+import org.lwjgl.opengl.GL11;
+
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiColor;
-
-import net.minecraft.util.IIcon;
-
-import org.lwjgl.opengl.GL11;
 
 public class ElementIcon extends ElementBase {
 

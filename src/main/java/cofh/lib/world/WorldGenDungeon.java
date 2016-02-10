@@ -1,10 +1,8 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.*;
+import static cofh.lib.world.WorldGenMinableCluster.canGenerateInBlock;
+import static cofh.lib.world.WorldGenMinableCluster.generateBlock;
 import static java.lang.Math.abs;
-
-import cofh.lib.util.WeightedRandomBlock;
-import cofh.lib.util.WeightedRandomNBTTag;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,6 +18,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DungeonHooks.DungeonMob;
+import cofh.lib.util.WeightedRandomBlock;
+import cofh.lib.util.WeightedRandomNBTTag;
 
 public class WorldGenDungeon extends WorldGenerator {
 

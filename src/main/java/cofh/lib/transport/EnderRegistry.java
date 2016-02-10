@@ -1,12 +1,5 @@
 package cofh.lib.transport;
 
-import cofh.api.transport.IEnderAttuned;
-import cofh.api.transport.IEnderDestination;
-import cofh.api.transport.IEnderEnergyHandler;
-import cofh.api.transport.IEnderFluidHandler;
-import cofh.api.transport.IEnderItemHandler;
-import cofh.lib.util.ArrayHashList;
-
 import gnu.trove.map.hash.TIntObjectHashMap;
 
 import java.util.BitSet;
@@ -19,6 +12,12 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import cofh.api.transport.IEnderAttuned;
+import cofh.api.transport.IEnderDestination;
+import cofh.api.transport.IEnderEnergyHandler;
+import cofh.api.transport.IEnderFluidHandler;
+import cofh.api.transport.IEnderItemHandler;
+import cofh.lib.util.ArrayHashList;
 
 public final class EnderRegistry {
 

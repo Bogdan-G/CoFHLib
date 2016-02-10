@@ -1,8 +1,7 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.*;
-
-import cofh.lib.util.WeightedRandomBlock;
+import static cofh.lib.world.WorldGenMinableCluster.canGenerateInBlock;
+import static cofh.lib.world.WorldGenMinableCluster.generateBlock;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +13,7 @@ import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenAdvLakes extends WorldGenerator {
 

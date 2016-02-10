@@ -1,17 +1,16 @@
 package cofh.lib.gui.container;
 
-import cofh.lib.gui.slot.SlotFalseCopy;
-import cofh.lib.util.helpers.InventoryHelper;
-import cofh.lib.util.helpers.MathHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import cofh.lib.gui.slot.SlotFalseCopy;
+import cofh.lib.util.helpers.InventoryHelper;
+import cofh.lib.util.helpers.MathHelper;
 
 public abstract class ContainerBase extends Container {
 

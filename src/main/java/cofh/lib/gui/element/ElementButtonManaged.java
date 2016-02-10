@@ -1,8 +1,8 @@
 package cofh.lib.gui.element;
 
-import cofh.lib.gui.GuiBase;
-
 import org.lwjgl.opengl.GL11;
+
+import cofh.lib.gui.GuiBase;
 
 public abstract class ElementButtonManaged extends ElementButtonBase {
 

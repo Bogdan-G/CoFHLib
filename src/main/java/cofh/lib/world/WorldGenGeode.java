@@ -1,14 +1,14 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.*;
-
-import cofh.lib.util.WeightedRandomBlock;
+import static cofh.lib.world.WorldGenMinableCluster.canGenerateInBlock;
+import static cofh.lib.world.WorldGenMinableCluster.generateBlock;
 
 import java.util.List;
 import java.util.Random;
 
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenGeode extends WorldGenerator {
 

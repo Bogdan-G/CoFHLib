@@ -1,10 +1,9 @@
 package cofh.lib.util.helpers;
 
-import cofh.api.item.IAugmentItem;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import cofh.api.item.IAugmentItem;
 
 public class AugmentHelper {
 
@@ -36,7 +35,7 @@ public class AugmentHelper {
 		if (augments.length <= 0) {
 			return;
 		}
-		if (stack.stackTagCompound == null) {
+		if (!stack.hasTagCompound()) {
 			stack.setTagCompound(new NBTTagCompound());
 		}
 		NBTTagList list = new NBTTagList();
@@ -48,7 +47,7 @@ public class AugmentHelper {
 				list.appendTag(tag);
 			}
 		}
-		stack.stackTagCompound.setTag("Augments", list);
+		stack.getTagCompound().setTag("Augments", list);
 	}
 
 	public static boolean isAugmentItem(ItemStack stack) {

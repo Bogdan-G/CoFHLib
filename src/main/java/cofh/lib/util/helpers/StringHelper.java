@@ -73,11 +73,11 @@ public final class StringHelper {
 		Fluid fluid = stack.getFluid();
 
 		String name = "" + END;
-		if (fluid.getRarity() == EnumRarity.uncommon) {
+		if (fluid.getRarity() == EnumRarity.UNCOMMON) {
 			name += YELLOW;
-		} else if (fluid.getRarity() == EnumRarity.rare) {
+		} else if (fluid.getRarity() == EnumRarity.RARE) {
 			name += BRIGHT_BLUE;
-		} else if (fluid.getRarity() == EnumRarity.epic) {
+		} else if (fluid.getRarity() == EnumRarity.EPIC) {
 			name += PINK;
 		}
 		name += fluid.getLocalizedName(stack) + END;
@@ -96,11 +96,11 @@ public final class StringHelper {
 	public static String getItemName(ItemStack stack) {
 
 		String name = "" + END;
-		if (stack.getRarity() == EnumRarity.uncommon) {
+		if (stack.getRarity() == EnumRarity.UNCOMMON) {
 			name += YELLOW;
-		} else if (stack.getRarity() == EnumRarity.rare) {
+		} else if (stack.getRarity() == EnumRarity.RARE) {
 			name += BRIGHT_BLUE;
-		} else if (stack.getRarity() == EnumRarity.epic) {
+		} else if (stack.getRarity() == EnumRarity.EPIC) {
 			name += PINK;
 		}
 		name += stack.getDisplayName() + END;
@@ -137,12 +137,6 @@ public final class StringHelper {
 			i %= k.value;
 		}
 		return r.toString();
-	}
-
-	@Deprecated
-	public static String getScaledNumber(long number, int minDigits) {
-
-		return getScaledNumber(number);
 	}
 
 	/* ITEM TEXT HELPERS */

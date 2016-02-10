@@ -1,7 +1,5 @@
 package cofh.lib.util.helpers;
 
-import cpw.mods.fml.common.FMLCommonHandler;
-
 import java.util.Iterator;
 
 import net.minecraft.entity.Entity;
@@ -14,7 +12,7 @@ import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 /**
  * This class contains various helper functions related to Entities.

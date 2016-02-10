@@ -2,7 +2,6 @@ package cofh.lib.inventory;
 
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public class InventoryManagerSided extends InventoryManagerStandard {
 

@@ -1,11 +1,5 @@
 package cofh.lib.gui.element;
 
-import cofh.lib.gui.GuiBase;
-import cofh.lib.gui.GuiProps;
-import cofh.lib.gui.TabTracker;
-import cofh.lib.render.RenderHelper;
-import cofh.lib.util.Rectangle4i;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +7,12 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
+
+import cofh.lib.gui.GuiBase;
+import cofh.lib.gui.GuiProps;
+import cofh.lib.gui.TabTracker;
+import cofh.lib.render.RenderHelper;
+import cofh.lib.util.Rectangle4i;
 
 /**
  * Base class for a tab element. Has self-contained rendering methods and a link back to the {@link GuiBase} it is a part of.

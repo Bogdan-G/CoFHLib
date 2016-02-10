@@ -1,7 +1,5 @@
 package cofh.lib.world;
 
-import cofh.lib.util.WeightedRandomBlock;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -13,6 +11,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenMinableCluster extends WorldGenerator {
 

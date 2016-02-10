@@ -1,13 +1,12 @@
 package cofh.lib.world;
 
-import cofh.lib.util.WeightedRandomWorldGenerator;
-
 import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import cofh.lib.util.WeightedRandomWorldGenerator;
 
 public class WorldGenMulti extends WorldGenerator {
 

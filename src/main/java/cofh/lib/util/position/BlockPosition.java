@@ -1,7 +1,5 @@
 package cofh.lib.util.position;
 
-import cofh.lib.util.helpers.BlockHelper;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +7,9 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraftforge.common.util.ForgeDirection;
+import cofh.lib.util.helpers.BlockHelper;
 
 public class BlockPosition implements Comparable<BlockPosition>, Serializable {
 

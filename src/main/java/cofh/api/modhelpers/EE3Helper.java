@@ -1,13 +1,12 @@
 package cofh.api.modhelpers;
 
-import cofh.lib.util.helpers.ItemHelper;
-import cpw.mods.fml.common.Loader;
-
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
+import cofh.lib.util.helpers.ItemHelper;
 
 public class EE3Helper {
 

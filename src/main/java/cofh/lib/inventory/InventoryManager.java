@@ -2,7 +2,6 @@ package cofh.lib.inventory;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraftforge.common.util.ForgeDirection;
 
 public class InventoryManager {
 

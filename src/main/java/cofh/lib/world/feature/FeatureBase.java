@@ -1,9 +1,5 @@
 package cofh.lib.world.feature;
 
-import cofh.api.world.IFeatureGenerator;
-import cofh.lib.world.biome.BiomeInfo;
-import cofh.lib.world.biome.BiomeInfoSet;
-
 import gnu.trove.set.hash.THashSet;
 
 import java.util.Random;
@@ -11,6 +7,9 @@ import java.util.Set;
 
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import cofh.api.world.IFeatureGenerator;
+import cofh.lib.world.biome.BiomeInfo;
+import cofh.lib.world.biome.BiomeInfoSet;
 
 public abstract class FeatureBase implements IFeatureGenerator {
 

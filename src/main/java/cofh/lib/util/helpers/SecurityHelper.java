@@ -1,14 +1,5 @@
 package cofh.lib.util.helpers;
 
-import cofh.api.tileentity.ISecurable;
-import cofh.api.tileentity.ISecurable.AccessMode;
-import com.google.common.base.Strings;
-import com.mojang.authlib.GameProfile;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
-import cpw.mods.fml.relauncher.ReflectionHelper;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +17,15 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.PreYggdrasilConverter;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
+import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import cofh.api.tileentity.ISecurable;
+import cofh.api.tileentity.ISecurable.AccessMode;
+
+import com.google.common.base.Strings;
+import com.mojang.authlib.GameProfile;
 
 public class SecurityHelper {
 

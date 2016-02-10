@@ -1,8 +1,8 @@
 package cofh.lib.transport;
 
-import com.google.common.primitives.Ints;
-
 import java.util.List;
+
+import com.google.common.primitives.Ints;
 
 public interface IEnderChannelRegistry {
 

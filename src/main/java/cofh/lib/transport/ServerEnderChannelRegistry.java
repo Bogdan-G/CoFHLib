@@ -1,10 +1,7 @@
 package cofh.lib.transport;
 
-import cofh.lib.network.ByteBufHelper;
-
 import gnu.trove.iterator.TIntObjectIterator;
 import gnu.trove.map.hash.TIntObjectHashMap;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
@@ -15,6 +12,7 @@ import java.util.List;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import cofh.lib.network.ByteBufHelper;
 
 public class ServerEnderChannelRegistry implements IEnderChannelRegistry {
 

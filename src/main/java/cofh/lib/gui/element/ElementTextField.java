@@ -1,12 +1,8 @@
 package cofh.lib.gui.element;
 
-import static org.lwjgl.opengl.GL11.*;
-
-import cofh.lib.gui.GuiBase;
-import cofh.lib.gui.GuiColor;
-import cofh.lib.util.helpers.MathHelper;
-import cofh.lib.util.helpers.StringHelper;
-
+import static org.lwjgl.opengl.GL11.GL_STENCIL_TEST;
+import static org.lwjgl.opengl.GL11.glDisable;
+import static org.lwjgl.opengl.GL11.glEnable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiScreen;
@@ -15,6 +11,11 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
+
+import cofh.lib.gui.GuiBase;
+import cofh.lib.gui.GuiColor;
+import cofh.lib.util.helpers.MathHelper;
+import cofh.lib.util.helpers.StringHelper;
 
 public class ElementTextField extends ElementBase {
 
@@ -25,10 +26,6 @@ public class ElementTextField extends ElementBase {
 	public int textColor = new GuiColor(224, 224, 224).getColor();
 	public int selectedTextColor = new GuiColor(224, 224, 224).getColor();
 	public int defaultCaretColor = new GuiColor(255, 255, 255).getColor();
-
-	@Deprecated
-	// dummy variable to avoid crashes with older implementation
-	protected int renderStart;
 
 	protected char[] text;
 	protected int textLength;
@@ -144,15 +141,6 @@ public class ElementTextField extends ElementBase {
 	}
 
 	public int getMaxLength() {
-
-		return text.length;
-	}
-
-	/**
-	 * @deprecated Use <tt>getMaxLength</tt>
-	 */
-	@Deprecated
-	public int getMaxStringLength() {
 
 		return text.length;
 	}

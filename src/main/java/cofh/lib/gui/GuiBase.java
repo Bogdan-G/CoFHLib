@@ -1,13 +1,5 @@
 package cofh.lib.gui;
 
-import cofh.lib.audio.SoundBase;
-import cofh.lib.gui.element.ElementBase;
-import cofh.lib.gui.element.TabBase;
-import cofh.lib.gui.slot.SlotFalseCopy;
-import cofh.lib.render.RenderHelper;
-import cofh.lib.util.helpers.StringHelper;
-import cpw.mods.fml.client.FMLClientHandler;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -20,14 +12,21 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
+
+import cofh.lib.audio.SoundBase;
+import cofh.lib.gui.element.ElementBase;
+import cofh.lib.gui.element.TabBase;
+import cofh.lib.gui.slot.SlotFalseCopy;
+import cofh.lib.render.RenderHelper;
+import cofh.lib.util.helpers.StringHelper;
 
 /**
  * Base class for a modular GUIs. Works with Elements {@link ElementBase} and Tabs {@link TabBase} which are both modular elements.
