@@ -1,9 +1,10 @@
 package cofh.lib.inventory;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import cofh.lib.util.ComparableItem;
 import cofh.lib.util.helpers.ItemHelper;
+
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 /**
  * This class allows for OreDictionary-compatible ItemStack comparisons and Integer-based Hashes without collisions.

@@ -1,14 +1,15 @@
 package cofh.lib.gui.element;
 
-import java.util.List;
-
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fluids.IFluidTank;
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiProps;
 import cofh.lib.render.RenderHelper;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.lib.util.helpers.StringHelper;
+
+import java.util.List;
+
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.IFluidTank;
 
 public class ElementFluidTank extends ElementBase {
 
@@ -18,7 +19,8 @@ public class ElementFluidTank extends ElementBase {
 	protected IFluidTank tank;
 	protected int gaugeType;
 
-	// If this is enabled, 1 pixel of fluid will always show in the tank as long as fluid is present.
+	// If this is enabled, 1 pixel of fluid will always show in the tank as long
+	// as fluid is present.
 	protected boolean alwaysShowMinimum = false;
 
 	public ElementFluidTank(GuiBase gui, int posX, int posY, IFluidTank tank) {

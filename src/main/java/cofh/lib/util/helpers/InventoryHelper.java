@@ -1,5 +1,7 @@
 package cofh.lib.util.helpers;
 
+import cofh.api.transport.IItemDuct;
+
 import java.util.List;
 
 import net.minecraft.inventory.IInventory;
@@ -7,7 +9,6 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import cofh.api.transport.IItemDuct;
 
 /**
  * This class contains helper functions related to Inventories and Inventory manipulation.
@@ -92,7 +93,8 @@ public class InventoryHelper {
 
 	/* IInventoryHandler Interaction */
 
-	// IInventoryHandler is not currently implemented or used. Possibly in the future.
+	// IInventoryHandler is not currently implemented or used. Possibly in the
+	// future.
 
 	/* IInventory Interaction */
 	public static ItemStack extractItemStackFromInventory(IInventory inventory, int side) {

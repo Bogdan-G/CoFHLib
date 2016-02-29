@@ -1,5 +1,9 @@
 package cofh.lib.world.feature;
 
+import cofh.lib.util.WeightedRandomBlock;
+import cofh.lib.util.helpers.BlockHelper;
+import cofh.lib.util.helpers.FluidHelper;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -9,9 +13,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fluids.Fluid;
-import cofh.lib.util.WeightedRandomBlock;
-import cofh.lib.util.helpers.BlockHelper;
-import cofh.lib.util.helpers.FluidHelper;
 
 public class FeatureGenUnderfluid extends FeatureBase {
 

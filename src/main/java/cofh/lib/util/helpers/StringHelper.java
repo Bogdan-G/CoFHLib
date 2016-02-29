@@ -124,8 +124,9 @@ public final class StringHelper {
 	public static String toNumerals(short v) {
 
 		String s = "potion.potency." + v;
-		if (StatCollector.canTranslate(s))
+		if (StatCollector.canTranslate(s)) {
 			return StatCollector.translateToLocal(s);
+		}
 		StringBuilder r = new StringBuilder();
 		int i = v;
 		if (i < 0) {
@@ -133,7 +134,9 @@ public final class StringHelper {
 			r.append('-');
 		}
 		for (Numeral k : Numeral.values) {
-			for (int j = i / k.value; j-- > 0; r.append(k.name));
+			for (int j = i / k.value; j-- > 0; r.append(k.name)) {
+				;
+			}
 			i %= k.value;
 		}
 		return r.toString();
@@ -223,11 +226,15 @@ public final class StringHelper {
 
 	private static enum Numeral {
 		M(1000), CM(900), D(500), CD(400), C(100), XC(90), L(50), XL(40), X(10), IX(9), V(5), IV(4), I(1);
+
 		public final String name = name();
 		public final int value;
+
 		private Numeral(int val) {
+
 			value = val;
 		}
+
 		private static final Numeral[] values = values();
 	}
 

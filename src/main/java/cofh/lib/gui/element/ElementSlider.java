@@ -1,13 +1,11 @@
 package cofh.lib.gui.element;
 
-import static cofh.lib.gui.element.ElementButtonBase.DISABLED;
-import static cofh.lib.gui.element.ElementButtonBase.ENABLED;
-import static cofh.lib.gui.element.ElementButtonBase.HOVER;
-
-import org.lwjgl.opengl.GL11;
+import static cofh.lib.gui.element.ElementButtonBase.*;
 
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiColor;
+
+import org.lwjgl.opengl.GL11;
 
 public abstract class ElementSlider extends ElementBase {
 
@@ -69,8 +67,8 @@ public abstract class ElementSlider extends ElementBase {
 	@Override
 	public void drawBackground(int mouseX, int mouseY, float gameTicks) {
 
-		drawModalRect(posX - 1, posY - 1, posX + sizeX + 1, posY + sizeY + 1, borderColor);
-		drawModalRect(posX, posY, posX + sizeX, posY + sizeY, backgroundColor);
+		drawSizedModalRect(posX - 1, posY - 1, posX + sizeX + 1, posY + sizeY + 1, borderColor);
+		drawSizedModalRect(posX, posY, posX + sizeX, posY + sizeY, backgroundColor);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 	}
 

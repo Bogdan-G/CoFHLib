@@ -2,7 +2,6 @@ package cofh.api.inventory;
 
 import net.minecraft.util.EnumFacing;
 
-
 /**
  * Implement this interface on TileEntities which should connect to item transportation blocks.
  */

@@ -86,7 +86,7 @@ public class Area {
 
 	public AxisAlignedBB toAxisAlignedBB() {
 
-		return AxisAlignedBB.getBoundingBox(xMin, yMin, zMin, xMax + 1, yMax + 1, zMax + 1);
+		return AxisAlignedBB.fromBounds(xMin, yMin, zMin, xMax + 1, yMax + 1, zMax + 1);
 	}
 
 }

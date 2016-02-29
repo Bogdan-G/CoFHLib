@@ -1,8 +1,9 @@
 package cofh.lib.gui.element;
 
-import net.minecraft.util.ResourceLocation;
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiProps;
+
+import net.minecraft.util.ResourceLocation;
 
 public abstract class ElementButtonBase extends ElementBase {
 

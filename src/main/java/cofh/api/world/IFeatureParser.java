@@ -1,8 +1,8 @@
 package cofh.api.world;
 
-import org.apache.logging.log4j.Logger;
-
 import com.google.gson.JsonObject;
+
+import org.apache.logging.log4j.Logger;
 
 public interface IFeatureParser {
 

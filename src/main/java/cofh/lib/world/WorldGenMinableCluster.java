@@ -1,5 +1,7 @@
 package cofh.lib.world;
 
+import cofh.lib.util.WeightedRandomBlock;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,7 +13,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenMinableCluster extends WorldGenerator {
 
@@ -74,7 +75,8 @@ public class WorldGenMinableCluster extends WorldGenerator {
 	public boolean generate(World world, Random rand, int x, int y, int z) {
 
 		int blocks = genClusterSize;
-		if (blocks < 4) { // HACK: at 1 and 2 no ores are ever generated. at 3 only 1/3 veins generate
+		if (blocks < 4) { // HACK: at 1 and 2 no ores are ever generated. at 3
+							// only 1/3 veins generate
 			return generateTiny(world, rand, x, y, z);
 		}
 		float f = rand.nextFloat() * (float) Math.PI;
@@ -98,7 +100,8 @@ public class WorldGenMinableCluster extends WorldGenerator {
 			float yCenter = yMin + (yMax * i) / blocks;
 			float zCenter = zMin + (zMax * i) / blocks;
 
-			// preserved as nextDouble to ensure the rand gets ticked the same amount
+			// preserved as nextDouble to ensure the rand gets ticked the same
+			// amount
 			float size = ((float) rand.nextDouble() * blocks) / 16f;
 
 			float hMod = ((MathHelper.sin((i * (float) Math.PI) / blocks) + 1f) * size + 1f) * .5f;
@@ -202,7 +205,7 @@ public class WorldGenMinableCluster extends WorldGenerator {
 			return null;
 		}
 		if (size > 1) {
-			return (WeightedRandomBlock) WeightedRandom.getRandomItem(world.rand, o);
+			return WeightedRandom.getRandomItem(world.rand, o);
 		}
 		return o.get(0);
 	}

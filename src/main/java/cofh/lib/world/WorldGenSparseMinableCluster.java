@@ -1,7 +1,8 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.fabricateList;
-import static cofh.lib.world.WorldGenMinableCluster.generateBlock;
+import static cofh.lib.world.WorldGenMinableCluster.*;
+
+import cofh.lib.util.WeightedRandomBlock;
 
 import java.util.List;
 import java.util.Random;
@@ -12,7 +13,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenSparseMinableCluster extends WorldGenerator {
 
@@ -92,7 +92,8 @@ public class WorldGenSparseMinableCluster extends WorldGenerator {
 			float yCenter = yMin + (yMax * i) / blocks;
 			float zCenter = zMin + (zMax * i) / blocks;
 
-			// preserved as nextDouble to ensure the rand gets ticked the same amount
+			// preserved as nextDouble to ensure the rand gets ticked the same
+			// amount
 			float size = ((float) rand.nextDouble() * blocks) / 16f;
 
 			float hMod = ((MathHelper.sin((i * (float) Math.PI) / blocks) + 1f) * size + 1f) * .5f;

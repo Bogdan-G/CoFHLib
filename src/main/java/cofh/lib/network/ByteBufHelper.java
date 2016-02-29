@@ -22,11 +22,11 @@ public final class ByteBufHelper {
 	public static void writeVarInt(int in, ByteBuf out) {
 
 		/*
-		 * Custom format: pseudo-ones-compliment utf-7
-		 * zyxx xxxx | zxxx xxxx | zxxx xxxx | zxxx xxxx | 0000 xxxx
-		 *  z = `continue` bit, if not set following bytes do not exist
-		 *  y = `negate` bit, if set the final value should be twos-compliment bitwise negated
-		 *  x = value bit. encoded in little-endian
+		 * Custom format: pseudo-ones-compliment utf-7 zyxx xxxx | zxxx xxxx |
+		 * zxxx xxxx | zxxx xxxx | 0000 xxxx z = `continue` bit, if not set
+		 * following bytes do not exist y = `negate` bit, if set the final value
+		 * should be twos-compliment bitwise negated x = value bit. encoded in
+		 * little-endian
 		 */
 		int v = 0x00;
 		if (in < 0) {

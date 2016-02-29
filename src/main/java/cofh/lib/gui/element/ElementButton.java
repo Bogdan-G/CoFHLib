@@ -1,12 +1,12 @@
 package cofh.lib.gui.element;
 
-import java.util.List;
-
-import org.lwjgl.opengl.GL11;
-
 import cofh.lib.gui.GuiBase;
 import cofh.lib.render.RenderHelper;
 import cofh.lib.util.helpers.StringHelper;
+
+import java.util.List;
+
+import org.lwjgl.opengl.GL11;
 
 public class ElementButton extends ElementButtonBase {
 

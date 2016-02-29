@@ -1,5 +1,10 @@
 package cofh.lib.util.helpers;
 
+import cofh.api.tileentity.ISecurable;
+import cofh.api.tileentity.ISecurable.AccessMode;
+import com.google.common.base.Strings;
+import com.mojang.authlib.GameProfile;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -21,11 +26,6 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
-import cofh.api.tileentity.ISecurable;
-import cofh.api.tileentity.ISecurable.AccessMode;
-
-import com.google.common.base.Strings;
-import com.mojang.authlib.GameProfile;
 
 public class SecurityHelper {
 
@@ -101,12 +101,12 @@ public class SecurityHelper {
 	public static void addOwnerInformation(ItemStack stack, List<String> list) {
 
 		if (SecurityHelper.isSecure(stack)) {
-			boolean hasUUID = stack.stackTagCompound.hasKey("OwnerUUID");
-			if (!stack.stackTagCompound.hasKey("Owner") && !hasUUID) {
+			boolean hasUUID = stack.getTagCompound().hasKey("OwnerUUID");
+			if (!stack.getTagCompound().hasKey("Owner") && !hasUUID) {
 				list.add(StringHelper.localize("info.cofh.owner") + ": " + StringHelper.localize("info.cofh.none"));
 			} else {
-				if (hasUUID && stack.stackTagCompound.hasKey("Owner")) {
-					list.add(StringHelper.localize("info.cofh.owner") + ": " + stack.stackTagCompound.getString("Owner") + " \u0378");
+				if (hasUUID && stack.getTagCompound().hasKey("Owner")) {
+					list.add(StringHelper.localize("info.cofh.owner") + ": " + stack.getTagCompound().getString("Owner") + " \u0378");
 				} else {
 					list.add(StringHelper.localize("info.cofh.owner") + ": " + StringHelper.localize("info.cofh.anotherplayer"));
 				}
@@ -118,7 +118,7 @@ public class SecurityHelper {
 
 		if (SecurityHelper.isSecure(stack)) {
 			String accessString = "";
-			switch (stack.stackTagCompound.getByte("Access")) {
+			switch (stack.getTagCompound().getByte("Access")) {
 			case 0:
 				accessString = StringHelper.localize("info.cofh.accessPublic");
 				break;
@@ -136,7 +136,7 @@ public class SecurityHelper {
 	/* ITEM HELPERS */
 	public static boolean isSecure(ItemStack stack) {
 
-		return stack.stackTagCompound == null ? false : stack.stackTagCompound.hasKey("Secure");
+		return stack.getTagCompound() == null ? false : stack.getTagCompound().hasKey("Secure");
 	}
 
 	public static ItemStack setSecure(ItemStack stack) {
@@ -144,11 +144,11 @@ public class SecurityHelper {
 		if (isSecure(stack)) {
 			return stack;
 		}
-		if (stack.stackTagCompound == null) {
+		if (stack.getTagCompound() == null) {
 			stack.setTagCompound(new NBTTagCompound());
 		}
-		stack.stackTagCompound.setBoolean("Secure", true);
-		stack.stackTagCompound.setByte("Access", (byte) 0);
+		stack.getTagCompound().setBoolean("Secure", true);
+		stack.getTagCompound().setByte("Access", (byte) 0);
 		return stack;
 	}
 
@@ -157,13 +157,13 @@ public class SecurityHelper {
 		if (!isSecure(stack)) {
 			return stack;
 		}
-		stack.stackTagCompound.removeTag("Secure");
-		stack.stackTagCompound.removeTag("Access");
-		stack.stackTagCompound.removeTag("OwnerUUID");
-		stack.stackTagCompound.removeTag("Owner");
+		stack.getTagCompound().removeTag("Secure");
+		stack.getTagCompound().removeTag("Access");
+		stack.getTagCompound().removeTag("OwnerUUID");
+		stack.getTagCompound().removeTag("Owner");
 
-		if (stack.stackTagCompound.hasNoTags()) {
-			stack.stackTagCompound = null;
+		if (stack.getTagCompound().hasNoTags()) {
+			stack.setTagCompound(null);
 		}
 		return stack;
 	}
@@ -173,13 +173,13 @@ public class SecurityHelper {
 		if (!isSecure(stack)) {
 			return false;
 		}
-		stack.stackTagCompound.setByte("Access", (byte) access.ordinal());
+		stack.getTagCompound().setByte("Access", (byte) access.ordinal());
 		return true;
 	}
 
 	public static AccessMode getAccess(ItemStack stack) {
 
-		return stack.stackTagCompound == null ? AccessMode.PUBLIC : AccessMode.values()[stack.stackTagCompound.getByte("Access")];
+		return stack.getTagCompound() == null ? AccessMode.PUBLIC : AccessMode.values()[stack.getTagCompound().getByte("Access")];
 	}
 
 	public static boolean setOwner(ItemStack stack, GameProfile name) {
@@ -194,8 +194,8 @@ public class SecurityHelper {
 
 	public static GameProfile getOwner(ItemStack stack) {
 
-		if (stack.stackTagCompound != null) {
-			NBTTagCompound nbt = stack.stackTagCompound;
+		if (stack.getTagCompound() != null) {
+			NBTTagCompound nbt = stack.getTagCompound();
 
 			String uuid = nbt.getString("OwnerUUID");
 			String name = nbt.getString("Owner");
@@ -223,12 +223,12 @@ public class SecurityHelper {
 
 	public static String getOwnerName(ItemStack stack) {
 
-		NBTTagCompound nbt = stack.stackTagCompound;
+		NBTTagCompound nbt = stack.getTagCompound();
 		boolean hasUUID;
 		if (nbt == null || (!(hasUUID = nbt.hasKey("OwnerUUID")) && !nbt.hasKey("Owner"))) {
 			return "[None]";
 		}
-		return hasUUID ? stack.stackTagCompound.getString("Owner") : StringHelper.localize("info.cofh.anotherplayer");
+		return hasUUID ? stack.getTagCompound().getString("Owner") : StringHelper.localize("info.cofh.anotherplayer");
 	}
 
 	// this class is to avoid an illegal access error from FML's event handler

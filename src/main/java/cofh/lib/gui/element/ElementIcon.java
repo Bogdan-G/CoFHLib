@@ -1,22 +1,24 @@
 package cofh.lib.gui.element;
 
-import org.lwjgl.opengl.GL11;
-
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiColor;
 
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+
+import org.lwjgl.opengl.GL11;
+
 public class ElementIcon extends ElementBase {
 
-	protected IIcon icon;
+	protected TextureAtlasSprite icon;
 	protected int spriteSheet;
 	protected GuiColor color = new GuiColor(-1);
 
-	public ElementIcon(GuiBase gui, int posX, int posY, IIcon icon) {
+	public ElementIcon(GuiBase gui, int posX, int posY, TextureAtlasSprite icon) {
 
 		this(gui, posX, posY, icon, 0);
 	}
 
-	public ElementIcon(GuiBase gui, int posX, int posY, IIcon icon, int spriteSheet) {
+	public ElementIcon(GuiBase gui, int posX, int posY, TextureAtlasSprite icon, int spriteSheet) {
 
 		super(gui, posX, posY);
 		this.icon = icon;
@@ -29,7 +31,7 @@ public class ElementIcon extends ElementBase {
 		return this;
 	}
 
-	public ElementIcon setIcon(IIcon icon) {
+	public ElementIcon setIcon(TextureAtlasSprite icon) {
 
 		this.icon = icon;
 		return this;

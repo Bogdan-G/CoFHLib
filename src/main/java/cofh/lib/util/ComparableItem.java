@@ -1,8 +1,9 @@
 package cofh.lib.util;
 
+import cofh.lib.util.helpers.ItemHelper;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import cofh.lib.util.helpers.ItemHelper;
 
 /**
  * Wrapper for an Item/Metadata combination post 1.7. Quick and dirty, allows for Integer-based Hashes without collisions.

@@ -52,7 +52,8 @@ public final class BlockHelper {
 	public static final byte[] INVERT_AROUND_Z = { 1, 0, 2, 3, 5, 4 };
 	public static final byte[] INVERT_AROUND_X = { 1, 0, 3, 2, 4, 5 };
 
-	// Map which gives relative Icon to use on a block which can be placed on any side.
+	// Map which gives relative Icon to use on a block which can be placed on
+	// any side.
 	public static final byte[][] ICON_ROTATION_MAP = new byte[6][];
 
 	static {
@@ -80,7 +81,8 @@ public final class BlockHelper {
 		public static final int SIGN = 11;
 	}
 
-	static { // TODO: review which of these can be removed in favor of the vanilla handler
+	static { // TODO: review which of these can be removed in favor of the
+				// vanilla handler
 		rotateType[Block.getIdFromBlock(Blocks.bed)] = RotationType.PREVENT;
 
 		rotateType[Block.getIdFromBlock(Blocks.stone_slab)] = RotationType.SLAB;
@@ -272,28 +274,39 @@ public final class BlockHelper {
 	}
 
 	/* UNSAFE Tile Entity Retrieval */
-	// public static TileEntity getAdjacentTileEntityUnsafe(World world, int x, int y, int z, ForgeDirection dir) {
+	// public static TileEntity getAdjacentTileEntityUnsafe(World world, int x,
+	// int y, int z, ForgeDirection dir) {
 	//
 	// if (world == null) {
 	// return null;
 	// }
-	// Chunk chunk = world.getChunkFromBlockCoords(x + dir.offsetX, z + dir.offsetZ);
-	// return chunk == null ? null : chunk.getChunkBlockTileEntityUnsafe((x + dir.offsetX) & 0xF, y + dir.offsetY, (z + dir.offsetZ) & 0xF);
+	// Chunk chunk = world.getChunkFromBlockCoords(x + dir.offsetX, z +
+	// dir.offsetZ);
+	// return chunk == null ? null : chunk.getChunkBlockTileEntityUnsafe((x +
+	// dir.offsetX) & 0xF, y + dir.offsetY, (z + dir.offsetZ) & 0xF);
 	// }
 	//
-	// public static TileEntity getAdjacentTileEntityUnsafe(World world, int x, int y, int z, int side) {
+	// public static TileEntity getAdjacentTileEntityUnsafe(World world, int x,
+	// int y, int z, int side) {
 	//
-	// return world == null ? null : getAdjacentTileEntityUnsafe(world, x, y, z, ForgeDirection.values()[side]);
+	// return world == null ? null : getAdjacentTileEntityUnsafe(world, x, y, z,
+	// ForgeDirection.values()[side]);
 	// }
 	//
-	// public static TileEntity getAdjacentTileEntityUnsafe(TileEntity refTile, ForgeDirection dir) {
+	// public static TileEntity getAdjacentTileEntityUnsafe(TileEntity refTile,
+	// ForgeDirection dir) {
 	//
-	// return refTile == null ? null : getAdjacentTileEntityUnsafe(refTile.worldObj, refTile.xCoord, refTile.yCoord, refTile.zCoord, dir);
+	// return refTile == null ? null :
+	// getAdjacentTileEntityUnsafe(refTile.worldObj, refTile.xCoord,
+	// refTile.yCoord, refTile.zCoord, dir);
 	// }
 	//
-	// public static TileEntity getAdjacentTileEntityUnsafe(TileEntity refTile, int side) {
+	// public static TileEntity getAdjacentTileEntityUnsafe(TileEntity refTile,
+	// int side) {
 	//
-	// return refTile == null ? null : getAdjacentTileEntityUnsafe(refTile.worldObj, refTile.xCoord, refTile.yCoord, refTile.zCoord,
+	// return refTile == null ? null :
+	// getAdjacentTileEntityUnsafe(refTile.worldObj, refTile.xCoord,
+	// refTile.yCoord, refTile.zCoord,
 	// ForgeDirection.values()[side]);
 	// }
 

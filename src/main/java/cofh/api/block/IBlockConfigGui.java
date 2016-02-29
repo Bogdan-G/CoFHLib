@@ -25,5 +25,5 @@ public interface IBlockConfigGui {
 	 * @return True if the GUI was opened.
 	 */
 	public boolean openConfigGui(IBlockAccess world, BlockPos pos, EnumFacing side, EntityPlayer player);
-	
+
 }

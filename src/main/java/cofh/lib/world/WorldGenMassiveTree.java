@@ -1,7 +1,9 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.canGenerateInBlock;
-import static cofh.lib.world.WorldGenMinableCluster.selectBlock;
+import static cofh.lib.world.WorldGenMinableCluster.*;
+
+import cofh.lib.util.WeightedRandomBlock;
+
 import gnu.trove.iterator.TLongObjectIterator;
 import gnu.trove.map.hash.TLongObjectHashMap;
 
@@ -20,7 +22,6 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.NibbleArray;
 import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenMassiveTree extends WorldGenerator {
 
@@ -545,7 +546,8 @@ public class WorldGenMassiveTree extends WorldGenerator {
 			generated = false;
 			this.setup();
 			// time = System.nanoTime() - time;
-			// logger.info("Verified spawn position of massive tree in: " + time + "ns");
+			// logger.info("Verified spawn position of massive tree in: " + time
+			// + "ns");
 			// long time2 = time = System.nanoTime();
 			this.generateLeafNodeList();
 			// long nodes = System.nanoTime();
@@ -558,7 +560,8 @@ public class WorldGenMassiveTree extends WorldGenerator {
 			// time = System.nanoTime() - time;
 			// logger.info("Generated massive tree in: " + time + "ns");
 			// trunk -= bases; bases -= leaves; leaves -= nodes; nodes -= time2;
-			// logger.info(String.format("%s for trunk, %s for leaf nodes, %s for leaves, %s for branches", trunk, nodes, leaves, bases));
+			// logger.info(String.format("%s for trunk, %s for leaf nodes, %s for leaves, %s for branches",
+			// trunk, nodes, leaves, bases));
 			// logger.info("\tTree contains " + blocksAdded + " Blocks");
 			// time = System.nanoTime();
 			if (fastPlacement) {
@@ -570,7 +573,8 @@ public class WorldGenMassiveTree extends WorldGenerator {
 					if (!relightBlocks) {
 						for (int i = storage.length; i-- > 0;) {
 							if (storage[i] != null) {
-								// { force data array to exist if optimizations to not exist are in place
+								// { force data array to exist if optimizations
+								// to not exist are in place
 								NibbleArray a = storage[i].getSkylightArray();
 								a.set(0, 0, 0, 0);
 								a.set(0, 0, 0, 15);
@@ -600,7 +604,8 @@ public class WorldGenMassiveTree extends WorldGenerator {
 		}
 	}
 
-	// private static final org.apache.logging.log4j.Logger logger = org.apache.logging.log4j.LogManager.getLogger("Tree logger");
+	// private static final org.apache.logging.log4j.Logger logger =
+	// org.apache.logging.log4j.LogManager.getLogger("Tree logger");
 	// private int blocksAdded = 0;
 	private TLongObjectHashMap<Chunk> chunkMap;
 
@@ -620,7 +625,7 @@ public class WorldGenMassiveTree extends WorldGenerator {
 			return;
 		}
 		// ++blocksAdded;
-		long pos = ((x & 0xFFFFFFF0L) << 32) | (z  & 0xFFFFFFF0L);
+		long pos = ((x & 0xFFFFFFF0L) << 32) | (z & 0xFFFFFFF0L);
 
 		Chunk chunk = chunkMap.get(pos);
 		if (chunk == null) {

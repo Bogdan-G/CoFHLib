@@ -91,7 +91,7 @@ public class FluidHelper {
 
 		container.setTagCompound(new NBTTagCompound());
 		NBTTagCompound fluidTag = resource.writeToNBT(new NBTTagCompound());
-		container.stackTagCompound.setTag("Fluid", fluidTag);
+		container.getTagCompound().setTag("Fluid", fluidTag);
 
 		return container;
 	}

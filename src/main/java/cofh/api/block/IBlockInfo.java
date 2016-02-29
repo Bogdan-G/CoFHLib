@@ -1,5 +1,7 @@
 package cofh.api.block;
 
+import cofh.api.tileentity.ITileInfo;
+
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,7 +9,6 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.world.IBlockAccess;
-import cofh.api.tileentity.ITileInfo;
 
 /**
  * Implement this interface on blocks which can provide information about themselves. If the block contains Tile Entities, then it is recommended that this

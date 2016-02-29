@@ -1,5 +1,7 @@
 package cofh.lib.render;
 
+import cofh.lib.util.helpers.ItemHelper;
+
 import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
@@ -14,8 +16,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
-
-import cofh.lib.util.helpers.ItemHelper;
 
 @SideOnly(Side.CLIENT)
 public class RenderFluidOverlayItem implements IItemRenderer {

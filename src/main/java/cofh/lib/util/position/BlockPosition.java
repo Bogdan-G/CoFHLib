@@ -1,5 +1,7 @@
 package cofh.lib.util.position;
 
+import cofh.lib.util.helpers.BlockHelper;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
-import cofh.lib.util.helpers.BlockHelper;
 
 public class BlockPosition implements Comparable<BlockPosition>, Serializable {
 
@@ -338,9 +339,9 @@ public class BlockPosition implements Comparable<BlockPosition>, Serializable {
 		if (!world.blockExists(x, y, z)) {
 			return null;
 		}
-        ChunkPosition chunkposition = new ChunkPosition(x & 15, y, z & 15);
-        Chunk chunk = world.getChunkFromBlockCoords(x, z);
-        TileEntity tileentity = (TileEntity)chunk.chunkTileEntityMap.get(chunkposition);
+		ChunkPosition chunkposition = new ChunkPosition(x & 15, y, z & 15);
+		Chunk chunk = world.getChunkFromBlockCoords(x, z);
+		TileEntity tileentity = (TileEntity) chunk.chunkTileEntityMap.get(chunkposition);
 		return tileentity == null || tileentity.isInvalid() ? null : tileentity;
 	}
 

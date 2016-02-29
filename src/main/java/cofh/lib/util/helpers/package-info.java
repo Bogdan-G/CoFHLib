@@ -5,6 +5,7 @@
 @API(apiVersion = CoFHLibProps.VERSION, owner = "CoFHLib", provides = "CoFHLib|util|helpers")
 package cofh.lib.util.helpers;
 
-import net.minecraftforge.fml.common.API;
 import cofh.lib.CoFHLibProps;
+
+import net.minecraftforge.fml.common.API;
 

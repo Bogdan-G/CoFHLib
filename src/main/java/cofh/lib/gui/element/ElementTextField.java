@@ -1,8 +1,12 @@
 package cofh.lib.gui.element;
 
-import static org.lwjgl.opengl.GL11.GL_STENCIL_TEST;
-import static org.lwjgl.opengl.GL11.glDisable;
-import static org.lwjgl.opengl.GL11.glEnable;
+import static org.lwjgl.opengl.GL11.*;
+
+import cofh.lib.gui.GuiBase;
+import cofh.lib.gui.GuiColor;
+import cofh.lib.util.helpers.MathHelper;
+import cofh.lib.util.helpers.StringHelper;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiScreen;
@@ -11,11 +15,6 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
-
-import cofh.lib.gui.GuiBase;
-import cofh.lib.gui.GuiColor;
-import cofh.lib.util.helpers.MathHelper;
-import cofh.lib.util.helpers.StringHelper;
 
 public class ElementTextField extends ElementBase {
 
@@ -849,8 +848,8 @@ public class ElementTextField extends ElementBase {
 	@Override
 	public void drawBackground(int mouseX, int mouseY, float gameTicks) {
 
-		drawModalRect(posX - 1, posY - 1, posX + sizeX + 1, posY + sizeY + 1, borderColor);
-		drawModalRect(posX, posY, posX + sizeX, posY + sizeY, isEnabled() ? backgroundColor : disabledColor);
+		drawSizedModalRect(posX - 1, posY - 1, posX + sizeX + 1, posY + sizeY + 1, borderColor);
+		drawSizedModalRect(posX, posY, posX + sizeX, posY + sizeY, isEnabled() ? backgroundColor : disabledColor);
 	}
 
 	@Override
@@ -913,14 +912,14 @@ public class ElementTextField extends ElementBase {
 				if (caretInsert) {
 					caretEnd = width + charW;
 				}
-				drawModalRect(startX + width, startY - 1 + height, startX + caretEnd, endY + height, (0xFF000000 & defaultCaretColor)
+				drawSizedModalRect(startX + width, startY - 1 + height, startX + caretEnd, endY + height, (0xFF000000 & defaultCaretColor)
 						| (~defaultCaretColor & 0xFFFFFF));
 			}
 
 			if (draw && !end) {
 				boolean selected = i >= selectionStart & i < selectionEnd;
 				if (selected) {
-					drawModalRect(startX + width, startY + height, startX + width + charW, endY + height, selectedLineColor);
+					drawSizedModalRect(startX + width, startY + height, startX + width + charW, endY + height, selectedLineColor);
 				}
 				if (c != '\n') {
 					font.drawString(String.valueOf(c), startX + width, startY + height, selected ? selectedTextColor : textColor);

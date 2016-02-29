@@ -1,16 +1,16 @@
 package cofh.lib.util.helpers;
 
+import cofh.api.energy.IEnergyConnection;
+import cofh.api.energy.IEnergyContainerItem;
+import cofh.api.energy.IEnergyProvider;
+import cofh.api.energy.IEnergyReceiver;
+
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import cofh.api.energy.IEnergyConnection;
-import cofh.api.energy.IEnergyContainerItem;
-import cofh.api.energy.IEnergyHandler;
-import cofh.api.energy.IEnergyProvider;
-import cofh.api.energy.IEnergyReceiver;
 
 /**
  * This class contains helper functions related to Redstone Flux, the basis of the CoFH Energy System.
@@ -20,8 +20,10 @@ import cofh.api.energy.IEnergyReceiver;
  */
 public class EnergyHelper {
 
-	public static final int RF_PER_MJ = 10; // Official Ratio of RF to MJ (BuildCraft)
-	public static final int RF_PER_EU = 4; // Official Ratio of RF to EU (IndustrialCraft)
+	public static final int RF_PER_MJ = 10; // Official Ratio of RF to MJ
+											// (BuildCraft)
+	public static final int RF_PER_EU = 4; // Official Ratio of RF to EU
+											// (IndustrialCraft)
 
 	private EnergyHelper() {
 
@@ -73,10 +75,10 @@ public class EnergyHelper {
 
 	public static ItemStack setDefaultEnergyTag(ItemStack container, int energy) {
 
-		if (container.stackTagCompound == null) {
+		if (!container.hasTagCompound()) {
 			container.setTagCompound(new NBTTagCompound());
 		}
-		container.stackTagCompound.setInteger("Energy", energy);
+		container.getTagCompound().setInteger("Energy", energy);
 
 		return container;
 	}

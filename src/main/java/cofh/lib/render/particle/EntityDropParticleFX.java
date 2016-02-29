@@ -1,11 +1,13 @@
 package cofh.lib.render.particle;
 
+import cofh.lib.util.helpers.MathHelper;
+
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import cofh.lib.util.helpers.MathHelper;
 
 @SideOnly(Side.CLIENT)
 public class EntityDropParticleFX extends EntityFX {

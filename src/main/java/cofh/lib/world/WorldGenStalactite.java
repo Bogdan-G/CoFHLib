@@ -1,13 +1,13 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.canGenerateInBlock;
-import static cofh.lib.world.WorldGenMinableCluster.generateBlock;
+import static cofh.lib.world.WorldGenMinableCluster.*;
+
+import cofh.lib.util.WeightedRandomBlock;
 
 import java.util.List;
 import java.util.Random;
 
 import net.minecraft.world.World;
-import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenStalactite extends WorldGenStalagmite {
 

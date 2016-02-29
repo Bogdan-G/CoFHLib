@@ -2,14 +2,15 @@ package cofh.lib.world.feature;
 
 import static cofh.lib.world.WorldGenMinableCluster.canGenerateInBlock;
 
+import cofh.lib.util.WeightedRandomBlock;
+import cofh.lib.util.helpers.BlockHelper;
+
 import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import cofh.lib.util.WeightedRandomBlock;
-import cofh.lib.util.helpers.BlockHelper;
 
 public class FeatureGenTopBlock extends FeatureBase {
 

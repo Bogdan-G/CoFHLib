@@ -1,5 +1,11 @@
 package cofh.lib.gui.element;
 
+import cofh.lib.gui.GuiBase;
+import cofh.lib.gui.GuiProps;
+import cofh.lib.gui.TabTracker;
+import cofh.lib.render.RenderHelper;
+import cofh.lib.util.Rectangle4i;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,12 +13,6 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
-
-import cofh.lib.gui.GuiBase;
-import cofh.lib.gui.GuiProps;
-import cofh.lib.gui.TabTracker;
-import cofh.lib.render.RenderHelper;
-import cofh.lib.util.Rectangle4i;
 
 /**
  * Base class for a tab element. Has self-contained rendering methods and a link back to the {@link GuiBase} it is a part of.
@@ -95,7 +95,8 @@ public abstract class TabBase extends ElementBase {
 
 	protected void drawForeground() {
 
-		// TODO: this and drawBackground() need to be called after the matrix translation (not for back compat)
+		// TODO: this and drawBackground() need to be called after the matrix
+		// translation (not for back compat)
 	}
 
 	protected void drawBackground() {
@@ -409,7 +410,8 @@ public abstract class TabBase extends ElementBase {
 
 		for (int i = elements.size(); i-- > 0;) {
 			ElementBase c = elements.get(i);
-			if (!c.isVisible() || !c.isEnabled()) { // no bounds checking on mouseUp events
+			if (!c.isVisible() || !c.isEnabled()) { // no bounds checking on
+													// mouseUp events
 				continue;
 			}
 			c.onMouseReleased(mouseX, mouseY);

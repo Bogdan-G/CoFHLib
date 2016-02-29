@@ -1,7 +1,8 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.canGenerateInBlock;
-import static cofh.lib.world.WorldGenMinableCluster.generateBlock;
+import static cofh.lib.world.WorldGenMinableCluster.*;
+
+import cofh.lib.util.WeightedRandomBlock;
 
 import java.util.List;
 import java.util.Random;
@@ -9,7 +10,6 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenSmallTree extends WorldGenerator {
 

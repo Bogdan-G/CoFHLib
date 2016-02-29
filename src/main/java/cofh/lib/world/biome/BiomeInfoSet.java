@@ -266,4 +266,5 @@ public class BiomeInfoSet implements Set<BiomeInfo> {
 			}
 		}
 	}
+
 }

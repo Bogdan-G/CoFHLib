@@ -1,7 +1,8 @@
 package cofh.lib.world;
 
-import static cofh.lib.world.WorldGenMinableCluster.fabricateList;
-import static cofh.lib.world.WorldGenMinableCluster.generateBlock;
+import static cofh.lib.world.WorldGenMinableCluster.*;
+
+import cofh.lib.util.WeightedRandomBlock;
 
 import java.util.List;
 import java.util.Random;
@@ -11,7 +12,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import cofh.lib.util.WeightedRandomBlock;
 
 public class WorldGenMinableLargeVein extends WorldGenerator {
 
@@ -81,7 +81,8 @@ public class WorldGenMinableLargeVein extends WorldGenerator {
 			int directionX1 = -rand.nextInt(2);
 			int directionY1 = -rand.nextInt(2);
 			int directionZ1 = -rand.nextInt(2);
-			{ // random code block to circumvent eclipse freaking out on auto-indent with unsigned right shift
+			{ // random code block to circumvent eclipse freaking out on
+				// auto-indent with unsigned right shift
 				directionX1 += ~directionX1 >>> 31;
 				directionY1 += ~directionY1 >>> 31;
 				directionZ1 += ~directionZ1 >>> 31;
@@ -108,7 +109,8 @@ public class WorldGenMinableLargeVein extends WorldGenerator {
 					int directionX2 = -rand.nextInt(2);
 					int directionY2 = -rand.nextInt(2);
 					int directionZ2 = -rand.nextInt(2);
-					{ // freaking out does not occur here, for some reason. the number at the end of the variable?
+					{ // freaking out does not occur here, for some reason. the
+						// number at the end of the variable?
 						directionX2 += ~directionX2 >>> 31;
 						directionY2 += ~directionY2 >>> 31;
 						directionZ2 += ~directionZ2 >>> 31;

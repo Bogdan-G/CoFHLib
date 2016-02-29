@@ -1,6 +1,5 @@
 package cofh.lib.util.position;
 
-
 public interface IRotateableTile {
 
 	public boolean canRotate();

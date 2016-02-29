@@ -5,6 +5,7 @@
 @API(apiVersion = CoFHLibProps.VERSION, owner = "CoFHLib", provides = "CoFHLib|audio")
 package cofh.lib.audio;
 
-import net.minecraftforge.fml.common.API;
 import cofh.lib.CoFHLibProps;
+
+import net.minecraftforge.fml.common.API;
 

@@ -1,9 +1,10 @@
 package cofh.lib.util.position;
 
+import cofh.lib.util.helpers.BlockHelper;
+
 import java.io.Serializable;
 
 import net.minecraft.world.chunk.Chunk;
-import cofh.lib.util.helpers.BlockHelper;
 
 /**
  * Standardized implementation for representing and manipulating Chunk Coordinates. Provides standard Java Collection interaction.

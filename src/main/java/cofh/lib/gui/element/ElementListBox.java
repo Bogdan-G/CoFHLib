@@ -1,21 +1,15 @@
 package cofh.lib.gui.element;
 
-import static org.lwjgl.opengl.GL11.GL_LIGHTING;
-import static org.lwjgl.opengl.GL11.GL_STENCIL_TEST;
-import static org.lwjgl.opengl.GL11.glDisable;
-import static org.lwjgl.opengl.GL11.glEnable;
-import static org.lwjgl.opengl.GL11.glPopMatrix;
-import static org.lwjgl.opengl.GL11.glPushMatrix;
-import static org.lwjgl.opengl.GL11.glTranslated;
-
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
+import static org.lwjgl.opengl.GL11.*;
 
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiColor;
 import cofh.lib.gui.element.listbox.IListBoxElement;
 import cofh.lib.util.helpers.StringHelper;
+
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ElementListBox extends ElementBase {
 
@@ -157,8 +151,8 @@ public class ElementListBox extends ElementBase {
 	@Override
 	public void drawBackground(int mouseX, int mouseY, float gameTicks) {
 
-		drawModalRect(posX - 1, posY - 1, posX + sizeX + 1, posY + sizeY + 1, borderColor);
-		drawModalRect(posX, posY, posX + sizeX, posY + sizeY, backgroundColor);
+		drawSizedModalRect(posX - 1, posY - 1, posX + sizeX + 1, posY + sizeY + 1, borderColor);
+		drawSizedModalRect(posX, posY, posX + sizeX, posY + sizeY, backgroundColor);
 	}
 
 	@Override

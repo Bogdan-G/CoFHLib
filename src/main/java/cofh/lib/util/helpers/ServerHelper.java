@@ -4,6 +4,7 @@ import net.minecraft.client.network.NetHandlerPlayClient;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.C08PacketPlayerBlockPlacement;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -43,14 +44,13 @@ public final class ServerHelper {
 	/**
 	 * This function circumvents a miserable failing.
 	 */
-	public static final void sendItemUsePacket(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int hitSide, float hitX, float hitY,
-			float hitZ) {
+	public static final void sendItemUsePacket(ItemStack stack, EntityPlayer player, World world, BlockPos pos, int hitSide, float hitX, float hitY, float hitZ) {
 
 		if (isServerWorld(world)) {
 			return;
 		}
 		NetHandlerPlayClient netClientHandler = (NetHandlerPlayClient) FMLClientHandler.instance().getClientPlayHandler();
-		netClientHandler.addToSendQueue(new C08PacketPlayerBlockPlacement(x, y, z, hitSide, player.inventory.getCurrentItem(), hitX, hitY, hitZ));
+		netClientHandler.addToSendQueue(new C08PacketPlayerBlockPlacement(pos, hitSide, player.inventory.getCurrentItem(), hitX, hitY, hitZ));
 	}
 
 }

@@ -5,6 +5,7 @@
 @API(apiVersion = CoFHAPIProps.VERSION, owner = "CoFHAPI", provides = "CoFHAPI|inventory")
 package cofh.api.inventory;
 
-import net.minecraftforge.fml.common.API;
 import cofh.api.CoFHAPIProps;
+
+import net.minecraftforge.fml.common.API;
 

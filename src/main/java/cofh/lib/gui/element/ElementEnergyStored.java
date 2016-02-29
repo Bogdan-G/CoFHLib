@@ -1,13 +1,14 @@
 package cofh.lib.gui.element;
 
-import java.util.List;
-
-import net.minecraft.util.ResourceLocation;
 import cofh.api.energy.IEnergyStorage;
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiProps;
 import cofh.lib.render.RenderHelper;
 import cofh.lib.util.helpers.MathHelper;
+
+import java.util.List;
+
+import net.minecraft.util.ResourceLocation;
 
 public class ElementEnergyStored extends ElementBase {
 
@@ -16,7 +17,8 @@ public class ElementEnergyStored extends ElementBase {
 
 	protected IEnergyStorage storage;
 
-	// If this is enabled, 1 pixel of energy will always show in the bar as long as it is non-zero.
+	// If this is enabled, 1 pixel of energy will always show in the bar as long
+	// as it is non-zero.
 	protected boolean alwaysShowMinimum = false;
 
 	public ElementEnergyStored(GuiBase gui, int posX, int posY, IEnergyStorage storage) {

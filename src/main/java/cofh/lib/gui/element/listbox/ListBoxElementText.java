@@ -1,7 +1,8 @@
 package cofh.lib.gui.element.listbox;
 
-import net.minecraft.client.Minecraft;
 import cofh.lib.gui.element.ElementListBox;
+
+import net.minecraft.client.Minecraft;
 
 public class ListBoxElementText implements IListBoxElement {
 
@@ -27,7 +28,7 @@ public class ListBoxElementText implements IListBoxElement {
 	@Override
 	public int getWidth() {
 
-		return Minecraft.getMinecraft().fontRenderer.getStringWidth(_text);
+		return Minecraft.getMinecraft().fontRendererObj.getStringWidth(_text);
 	}
 
 	@Override

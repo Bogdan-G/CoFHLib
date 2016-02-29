@@ -1,27 +1,16 @@
 package cofh.lib.gui.element;
 
-import static org.lwjgl.opengl.GL11.GL_ALWAYS;
-import static org.lwjgl.opengl.GL11.GL_EQUAL;
-import static org.lwjgl.opengl.GL11.GL_REPLACE;
-import static org.lwjgl.opengl.GL11.GL_STENCIL_BUFFER_BIT;
-import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
-import static org.lwjgl.opengl.GL11.GL_ZERO;
-import static org.lwjgl.opengl.GL11.glClear;
-import static org.lwjgl.opengl.GL11.glClearStencil;
-import static org.lwjgl.opengl.GL11.glColorMask;
-import static org.lwjgl.opengl.GL11.glDepthMask;
-import static org.lwjgl.opengl.GL11.glDisable;
-import static org.lwjgl.opengl.GL11.glEnable;
-import static org.lwjgl.opengl.GL11.glStencilFunc;
-import static org.lwjgl.opengl.GL11.glStencilMask;
-import static org.lwjgl.opengl.GL11.glStencilOp;
+import static org.lwjgl.opengl.GL11.*;
+
+import cofh.lib.gui.GuiBase;
 
 import java.util.List;
 
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
-import cofh.lib.gui.GuiBase;
 
 /**
  * Base class for a modular GUI element. Has self-contained rendering methods and a link back to the {@link GuiBase} it is a part of.
@@ -132,12 +121,12 @@ public abstract class ElementBase {
 
 	}
 
-	public void drawModalRect(int x, int y, int width, int height, int color) {
+	public void drawSizedModalRect(int x, int y, int width, int height, int color) {
 
 		gui.drawSizedModalRect(x, y, width, height, color);
 	}
 
-	public void drawStencil(int xStart, int yStart, int xEnd, int yEnd, int flag) {
+	public void drawStencil(int x1, int y1, int x2, int y2, int flag) {
 
 		glDisable(GL_TEXTURE_2D);
 		glStencilFunc(GL_ALWAYS, flag, flag);
@@ -148,12 +137,14 @@ public abstract class ElementBase {
 		glClearStencil(0);
 		glClear(GL_STENCIL_BUFFER_BIT);
 
-		Tessellator.instance.startDrawingQuads();
-		Tessellator.instance.addVertex(xStart, yEnd, 0);
-		Tessellator.instance.addVertex(xEnd, yEnd, 0);
-		Tessellator.instance.addVertex(xEnd, yStart, 0);
-		Tessellator.instance.addVertex(xStart, yStart, 0);
-		Tessellator.instance.draw();
+		Tessellator tessellator = Tessellator.getInstance();
+		WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+		worldrenderer.begin(7, DefaultVertexFormats.POSITION);
+		worldrenderer.pos(x1, y2, 0.0D).endVertex();
+		worldrenderer.pos(x2, y2, 0.0D).endVertex();
+		worldrenderer.pos(x2, y1, 0.0D).endVertex();
+		worldrenderer.pos(x1, y1, 0.0D).endVertex();
+		tessellator.draw();
 
 		glEnable(GL_TEXTURE_2D);
 		glStencilFunc(GL_EQUAL, flag, flag);
