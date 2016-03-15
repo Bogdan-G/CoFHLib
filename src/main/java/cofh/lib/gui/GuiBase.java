@@ -521,10 +521,10 @@ public abstract class GuiBase extends GuiContainer {
 			font = fontRendererObj;
 		}
 
-		itemRender.renderItemAndEffectIntoGUI(font, this.mc.getTextureManager(), stack, x, y);
+		itemRender.renderItemAndEffectIntoGUI(stack, x, y);
 
 		if (drawOverlay) {
-			itemRender.renderItemOverlayIntoGUI(font, this.mc.getTextureManager(), stack, x, y - (this.draggedStack == null ? 0 : 8), overlayTxt);
+			itemRender.renderItemOverlayIntoGUI(font, stack, x, y - (this.draggedStack == null ? 0 : 8), overlayTxt);
 		}
 
 		this.zLevel = 0.0F;
