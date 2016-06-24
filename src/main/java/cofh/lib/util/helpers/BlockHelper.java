@@ -266,7 +266,7 @@ public final class BlockHelper {
 		if (blockA == blockB) {
 			return true;
 		}
-		if (blockA == null | blockB == null) {
+		if (blockA == null || blockB == null) {
 			return false;
 		}
 		return blockA.equals(blockB) || blockA.isAssociatedBlock(blockB);

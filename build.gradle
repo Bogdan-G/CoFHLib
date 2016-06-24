@@ -29,12 +29,15 @@ else
     println "!! No build number set !!"
 }
 
-version = "1.7.10R3.0.3"
+version = "1.7.10R1.1.2"
 group = "cofh"
 archivesBaseName = "CoFHLib"
 
+sourceCompatibility = 7
+targetCompatibility = 7
+
 minecraft {
-    version = "1.7.10-10.13.4.1448-1.7.10"
+    version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse/assets"
 }
 

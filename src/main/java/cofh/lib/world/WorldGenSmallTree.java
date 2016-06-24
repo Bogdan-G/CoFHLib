@@ -71,7 +71,7 @@ public class WorldGenSmallTree extends WorldGenerator {
 
 						int radius = getLeafRadius(treeHeight, yOffset - y, true);
 
-						if (yOffset >= 0 & yOffset < worldHeight) {
+						if (yOffset >= 0 && yOffset < worldHeight) {
 							if (radius == 0) {
 								block = world.getBlock(x, yOffset, z);
 								if (!(block.isLeaves(world, x, yOffset, z) || block.isAir(world, x, yOffset, z) || block.isReplaceable(world, x, yOffset, z)

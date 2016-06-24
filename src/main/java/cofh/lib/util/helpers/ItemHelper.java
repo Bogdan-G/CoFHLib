@@ -503,7 +503,7 @@ public final class ItemHelper {
 
 	public static boolean addGearRecipe(ItemStack gear, String ingot, ItemStack center) {
 
-		if (gear == null | center == null || !oreNameExists(ingot)) {
+		if (gear == null || center == null || !oreNameExists(ingot)) {
 			return false;
 		}
 		GameRegistry.addRecipe(ShapedRecipe(gear, " X ", "XIX", " X ", 'X', ingot, 'I', center));
@@ -512,7 +512,7 @@ public final class ItemHelper {
 
 	public static boolean addGearRecipe(ItemStack gear, ItemStack ingot, String center) {
 
-		if (gear == null | ingot == null || !oreNameExists(center)) {
+		if (gear == null || ingot == null || !oreNameExists(center)) {
 			return false;
 		}
 		GameRegistry.addRecipe(ShapedRecipe(gear, " X ", "XIX", " X ", 'X', ingot, 'I', center));
@@ -521,7 +521,7 @@ public final class ItemHelper {
 
 	public static boolean addGearRecipe(ItemStack gear, ItemStack ingot, ItemStack center) {
 
-		if (gear == null | ingot == null | center == null) {
+		if (gear == null || ingot == null | center == null) {
 			return false;
 		}
 		GameRegistry.addRecipe(cloneStack(gear), " X ", "XIX", " X ", 'X', cloneStack(ingot, 1), 'I', cloneStack(center, 1));
@@ -540,7 +540,7 @@ public final class ItemHelper {
 
 	public static boolean addRotatedGearRecipe(ItemStack gear, String ingot, ItemStack center) {
 
-		if (gear == null | center == null || !oreNameExists(ingot)) {
+		if (gear == null || center == null || !oreNameExists(ingot)) {
 			return false;
 		}
 		GameRegistry.addRecipe(ShapedRecipe(gear, "X X", " I ", "X X", 'X', ingot, 'I', center));
@@ -549,7 +549,7 @@ public final class ItemHelper {
 
 	public static boolean addRotatedGearRecipe(ItemStack gear, ItemStack ingot, String center) {
 
-		if (gear == null | ingot == null || !oreNameExists(center)) {
+		if (gear == null || ingot == null || !oreNameExists(center)) {
 			return false;
 		}
 		GameRegistry.addRecipe(ShapedRecipe(gear, "X X", " I ", "X X", 'X', ingot, 'I', center));
@@ -558,7 +558,7 @@ public final class ItemHelper {
 
 	public static boolean addRotatedGearRecipe(ItemStack gear, ItemStack ingot, ItemStack center) {
 
-		if (gear == null | ingot == null | center == null) {
+		if (gear == null || ingot == null | center == null) {
 			return false;
 		}
 		GameRegistry.addRecipe(cloneStack(gear), "X X", " I ", "X X", 'X', cloneStack(ingot, 1), 'I', cloneStack(center, 1));
@@ -570,7 +570,7 @@ public final class ItemHelper {
 	// SURROUND{
 	public static boolean addSurroundRecipe(ItemStack out, ItemStack one, ItemStack eight) {
 
-		if (out == null | one == null | eight == null) {
+		if (out == null || one == null | eight == null) {
 			return false;
 		}
 		GameRegistry.addRecipe(cloneStack(out), "XXX", "XIX", "XXX", 'X', cloneStack(eight, 1), 'I', cloneStack(one, 1));
@@ -579,7 +579,7 @@ public final class ItemHelper {
 
 	public static boolean addSurroundRecipe(ItemStack out, String one, ItemStack eight) {
 
-		if (out == null | eight == null || !oreNameExists(one)) {
+		if (out == null || eight == null || !oreNameExists(one)) {
 			return false;
 		}
 		GameRegistry.addRecipe(ShapedRecipe(out, "XXX", "XIX", "XXX", 'X', eight, 'I', one));
@@ -588,7 +588,7 @@ public final class ItemHelper {
 
 	public static boolean addSurroundRecipe(ItemStack out, ItemStack one, String eight) {
 
-		if (out == null | one == null || !oreNameExists(eight)) {
+		if (out == null || one == null || !oreNameExists(eight)) {
 			return false;
 		}
 		GameRegistry.addRecipe(ShapedRecipe(out, "XXX", "XIX", "XXX", 'X', eight, 'I', one));
@@ -609,7 +609,7 @@ public final class ItemHelper {
 	// FENCES{
 	public static boolean addFenceRecipe(ItemStack out, ItemStack in) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		GameRegistry.addRecipe(cloneStack(out), "XXX", "XXX", 'X', cloneStack(in, 1));
@@ -639,7 +639,7 @@ public final class ItemHelper {
 
 	public static boolean addReverseStorageRecipe(ItemStack nine, ItemStack one) {
 
-		if (nine == null | one == null) {
+		if (nine == null || one == null) {
 			return false;
 		}
 		GameRegistry.addShapelessRecipe(cloneStack(nine, 9), cloneStack(one, 1));
@@ -657,7 +657,7 @@ public final class ItemHelper {
 
 	public static boolean addSmallReverseStorageRecipe(ItemStack four, ItemStack one) {
 
-		if (four == null | one == null) {
+		if (four == null || one == null) {
 			return false;
 		}
 		GameRegistry.addShapelessRecipe(cloneStack(four, 4), cloneStack(one, 1));
@@ -678,7 +678,7 @@ public final class ItemHelper {
 
 	public static boolean addStorageRecipe(ItemStack one, ItemStack nine) {
 
-		if (one == null | nine == null) {
+		if (one == null || nine == null) {
 			return false;
 		}
 		nine = cloneStack(nine, 1);
@@ -697,7 +697,7 @@ public final class ItemHelper {
 
 	public static boolean addSmallStorageRecipe(ItemStack one, ItemStack four) {
 
-		if (one == null | four == null) {
+		if (one == null || four == null) {
 			return false;
 		}
 		GameRegistry.addRecipe(cloneStack(one), "XX", "XX", 'X', cloneStack(four, 1));
@@ -729,7 +729,7 @@ public final class ItemHelper {
 	// SMELTING{
 	public static boolean addSmelting(ItemStack out, Item in) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), 0);
@@ -738,7 +738,7 @@ public final class ItemHelper {
 
 	public static boolean addSmelting(ItemStack out, Block in) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), 0);
@@ -747,7 +747,7 @@ public final class ItemHelper {
 
 	public static boolean addSmelting(ItemStack out, ItemStack in) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), 0);
@@ -756,7 +756,7 @@ public final class ItemHelper {
 
 	public static boolean addSmelting(ItemStack out, Item in, float XP) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), XP);
@@ -765,7 +765,7 @@ public final class ItemHelper {
 
 	public static boolean addSmelting(ItemStack out, Block in, float XP) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), XP);
@@ -774,7 +774,7 @@ public final class ItemHelper {
 
 	public static boolean addSmelting(ItemStack out, ItemStack in, float XP) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), XP);
@@ -783,7 +783,7 @@ public final class ItemHelper {
 
 	public static boolean addWeakSmelting(ItemStack out, Item in) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), 0.1f);
@@ -792,7 +792,7 @@ public final class ItemHelper {
 
 	public static boolean addWeakSmelting(ItemStack out, Block in) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), 0.1f);
@@ -801,7 +801,7 @@ public final class ItemHelper {
 
 	public static boolean addWeakSmelting(ItemStack out, ItemStack in) {
 
-		if (out == null | in == null) {
+		if (out == null || in == null) {
 			return false;
 		}
 		FurnaceRecipes.smelting().func_151394_a(cloneStack(in, 1), cloneStack(out), 0.1f);
@@ -812,7 +812,7 @@ public final class ItemHelper {
 
 	public static boolean addTwoWayConversionRecipe(ItemStack a, ItemStack b) {
 
-		if (a == null | b == null) {
+		if (a == null || b == null) {
 			return false;
 		}
 		GameRegistry.addShapelessRecipe(cloneStack(a, 1), cloneStack(b, 1));
@@ -983,7 +983,7 @@ public final class ItemHelper {
 
 	public static boolean areItemsEqual(Item itemA, Item itemB) {
 
-		if (itemA == null | itemB == null) {
+		if (itemA == null || itemB == null) {
 			return false;
 		}
 		return itemA == itemB || itemA.equals(itemB);
@@ -1067,10 +1067,10 @@ public final class ItemHelper {
 	 */
 	public static boolean doNBTsMatch(NBTTagCompound nbtA, NBTTagCompound nbtB) {
 
-		if (nbtA == null & nbtB == null) {
+		if (nbtA == null && nbtB == null) {
 			return true;
 		}
-		if (nbtA != null & nbtB != null) {
+		if (nbtA != null && nbtB != null) {
 			return nbtA.equals(nbtB);
 		}
 		return false;
